@@ -64,6 +64,66 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-base" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/19/base/" class="article-date">
+  <time datetime="2020-05-19T14:09:30.000Z" itemprop="datePublished">2020-05-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/19/base/">base</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="环境介绍"><a href="#环境介绍" class="headerlink" title="环境介绍"></a>环境介绍</h2><p>node_modules:非常大<br>public ：入口文件<br>src：源码文件</p>
+<h2 id="环境安装"><a href="#环境安装" class="headerlink" title="环境安装"></a>环境安装</h2><p>npm create-react-app react-demo<br>cd react-demo<br>npm start</p>
+<h2 id="react基础"><a href="#react基础" class="headerlink" title="react基础"></a>react基础</h2><p>// jsx语法<br>javascript+xml（html）<br>解读jsx语法，遇到&lt;&gt;按照html语法解析，遇到{}按照js语法解析</p>
+<h2 id="元素渲染"><a href="#元素渲染" class="headerlink" title="元素渲染"></a>元素渲染</h2><p>// ():如果存在标签结构，并且标签结构要换行，需要用()扩起来<br> const element = (<br>  <div><br>    <h4>新闻标题</h4><br>    <p>新闻内容:今天是周五</p><br>    <p>发布时间: {new Date().toLocaleTimeString()}</p><br>  </div><br>)<br>ReactDOM.render(element, document.getElementById(‘root’));</p>
+<h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><p>创建一个组件<br>注意： React.Component{} 直接大括号{}，没有小括号()<br>      render(){} 渲染函数(){} 都要加<br>      return() 是返回标签，必加小括号()</p>
+<p>组件的后缀可以是js，也可以是jsx<br>一个react项目是有成千上万个组件组成</p>
+<h2 id="props属性"><a href="#props属性" class="headerlink" title="props属性"></a>props属性</h2><p>组件的复用性很重要<br>// props子元素使用他不可以被修改，修改需要到父元素<br>this.props.nav.map(()=&gt;{<br>   return()<br>})</p>
+<h2 id="state"><a href="#state" class="headerlink" title="state"></a>state</h2><p>组件中的状态state<br>以前我们操作页面元素的变化，都是修改dom，操作dom<br>但是有了react框架，我们不再推荐直接操作dom，页面元素的改变使用state进行处理</p>
+<p>注意：箭头函数可以解决this的问题，省略bind(this)</p>
+<p>// constructor(构造)钩子函数，可以定义state，如果不定义state，有没有钩子函数无区别<br>   一但写了constructor钩子函数，就必须在此函数中写super(),此时组件才有自己的this，在组件的全局中都可以使用this关键字</p>
+<p>constructor(props) {<br>    super(props);<br>    this.state = {    //设置状态值<br>      flag: true,<br>    };<br>  }<br>this.setState({})  改变state的值，用this.setState({})方法</p>
+<h2 id="setState更新是同步还是异步"><a href="#setState更新是同步还是异步" class="headerlink" title="setState更新是同步还是异步"></a>setState更新是同步还是异步</h2><p>1.setState会引起视图重绘<br>2.在可控的情况下是异步，非可控的情况下是同步<br> 注意：<br> 当改变数据想直接获取数据(同步)</p>
+<h2 id="react生命周期"><a href="#react生命周期" class="headerlink" title="react生命周期"></a>react生命周期</h2><p>随着我们对react理解和使用越来越多，生命周期的参考价值越来越高<br>函数列表：<br>    componentWillMount:在组件渲染之前执行<br>    componentDidMount:在组件渲染之后执行<br>    showldComponentUpdate:返回true和false，true代表允许改变，false代表不允许改变<br>    componentWillUpdate:数据在改变之前执行，(state,props)<br>    componentDidUpdate:数据修改完执行(state,props)<br>    componentWillReveiceProps:props发生改变执行<br>    componentwillUnmount:组件卸载前执行</p>
+<pre><code>！！！子传父
+！！！父传子</code></pre><h2 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染"></a>条件渲染</h2><p>常见的应用场景<br>1.对视图条件进行切换  true false<br>2.做缺省值： 例如有数据的时候显示，无数据的时候显示等待</p>
+<h2 id="列表渲染-amp-key"><a href="#列表渲染-amp-key" class="headerlink" title="列表渲染  &amp;key"></a>列表渲染  &amp;key</h2><p>主要问题是key<br>注意：如果数据索引没有发生变化，则ui不会发生重绘，只有发生变化的部分会重绘，这样会节省资源，节省消耗</p>
+<h2 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h2><p>1.受控组件</p>
+<p>2.非受控组件</p>
+<p> 1.) refs DOM提供了一种方法，允许我们访问dom节点或在render方法中创建react元素<br>  constructor(){<br>        super();<br>        this.helloDiv = React.createRef()  //创建react.createRef()<br>    }<br>  当 ref 被传递给 render 中的元素时，对该节点的引用可以在 ref 的 current 属性中被访问<br>     <h4 ref= {this.helloDiv}>refs</h4><br>     this.helloDiv.current.style.color </p>
+<h2 id="状态提升"><a href="#状态提升" class="headerlink" title="状态提升"></a>状态提升</h2><p>组件之间的数据交互</p>
+<h2 id="组合-vs-继承"><a href="#组合-vs-继承" class="headerlink" title="组合 vs 继承"></a>组合 vs 继承</h2><p>大多数情况下使用组合<br>父级下组件添加标签内容<br><Compose><br>   <div>我是组合</div><br></Comoose><br>子级下用this.props.children可读取<br>组合：{this.props.children}</p>
+<h2 id="propstypes-进行类型的检查"><a href="#propstypes-进行类型的检查" class="headerlink" title="propstypes 进行类型的检查"></a>propstypes 进行类型的检查</h2><p>增强程序的健壮性</p>
+<p>PropsTypeDemo.propTypes = {<br>  title: propTypes.string,<br>};</p>
+<p>// 指定默认值 ？？？？？？？？？？？<br>PropsTypeDemo.defaultProps={<br>    title:’默认’<br>}</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/05/19/base/" data-id="ckadzvvwx00003djehtdj8jwx" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hah" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/05/13/hah/" class="article-date">
@@ -196,6 +256,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2020/05/19/base/">base</a>
+          </li>
         
           <li>
             <a href="/2020/05/13/hah/">pc端网页布局  ---精通网页布局</a>
