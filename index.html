@@ -64,6 +64,82 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Advanced" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/19/Advanced/" class="article-date">
+  <time datetime="2020-05-19T14:27:46.000Z" itemprop="datePublished">2020-05-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/19/Advanced/">React 进阶</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="antd-UI组件库"><a href="#antd-UI组件库" class="headerlink" title="antd UI组件库"></a>antd UI组件库</h2><p>安装：npm install antd –save<br>引入 import { Button } from ‘antd’;<br>样式 import ‘antd/dist/antd.css’; // or ‘antd/dist/antd.less’</p>
+<h2 id="按需加载"><a href="#按需加载" class="headerlink" title="按需加载"></a>按需加载</h2><h2 id="1-手动按需加载"><a href="#1-手动按需加载" class="headerlink" title="1.手动按需加载"></a>1.手动按需加载</h2><p>import Button from ‘antd/es/Button’; // 加载 JS<br>import ‘antd/es/Button/style/css’; // 加载 CSS</p>
+<p>##webpack 配置es6的转码，需要用到 .babelrc文件<br>有效的利用搜索引擎</p>
+<h2 id="2-使用-babel-plugin-import（推荐）按需加载"><a href="#2-使用-babel-plugin-import（推荐）按需加载" class="headerlink" title="2.使用 babel-plugin-import（推荐）按需加载"></a>2.使用 babel-plugin-import（推荐）按需加载</h2><p>1.拉取react的配置文件 npm run eject<br>2.遇到的问题，是删除无用文件，无法运行命令,在项目中找到隐藏.git文件删除，重新运行<br>3.安装babel<br>  npm install babel-plugin-import –save-dev<br>4.package.json下修改babel<br>“plugins”: [<br>    [“import”, {<br>      “libraryName”: “antd”,<br>      “libraryDirectory”: “es”,<br>      “style”: “css” // <code>style: true</code> 会加载 less 文件<br>    }]<br>  ]<br>5.npm start</p>
+<h2 id="react-网络请求"><a href="#react-网络请求" class="headerlink" title="react 网络请求"></a>react 网络请求</h2><p>fetch API 基于promise<br>文档地址：<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API</a><br>1.get<br>      fetch(“<a href="http://iwenwiki.com/api/blueberrypai/getIndexBanner.php&quot;" target="_blank" rel="noopener">http://iwenwiki.com/api/blueberrypai/getIndexBanner.php&quot;</a>)<br>      .then(res=&gt;{<br>          return res.json()<br>      })<br>      .then(data=&gt;{<br>          console.log(data);<br>          this.setState({<br>            banner: data.banner<br>          })<br>      })<br>2.post<br>postman检查接口是否正常返回:<a href="https://www.postman.com/downloads/" target="_blank" rel="noopener">https://www.postman.com/downloads/</a></p>
+<p>import queryString from “querystring”<br>fetch(“<a href="http://iwenwiki.com/api/blueberrypai/login.php&quot;" target="_blank" rel="noopener">http://iwenwiki.com/api/blueberrypai/login.php&quot;</a>, {<br>       method: “POST”,<br>       headers: {<br>         “Accept”:”application/json,text/plain,<em>/</em>“ /* 格式限制：json、文本、其他格式 <em>/,<br>         “Content-Type”: “application/x-www-form-urlencoded” /</em> 请求内容类型 */,<br>       },<br>       //（1）也可自己写字符串拼接方法<br>       //（2）stringify—– 引入node.js<br>        body: queryString.stringify({<br>         user_id: “<a href="mailto:iwen@qq.com">iwen@qq.com</a>“,<br>         password: “iwen123”,<br>         verification_code: “crfvw”,<br>       }),<br>       //（3）body: “user_id=iwen@qq.com&amp;password=iwen123&amp;verification_code=crfvw”,<br>     })<br>       .then((res) =&gt; {<br>         return res.json();<br>       })<br>       .then((data) =&gt; {<br>         console.log(data);<br>       });</p>
+<h2 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h2><p>参考地址：<a href="https://github.com/facebook/create-react-app/blob/master/docusaurus/docs/proxying-api-requests-in-development.md" target="_blank" rel="noopener">https://github.com/facebook/create-react-app/blob/master/docusaurus/docs/proxying-api-requests-in-development.md</a><br>1.开发环境下：<br>（1）利用环境解决，react vue都提供了解决方案<br>“proxy”： “http//localhost：4000”，添加到package.json</p>
+<p>（2）手动配置跨域<br>  npm install http-proxy-middleware –save<br>  src下创建文件 setupProxy.js<br>  添加代码：<br>  const { createProxyMiddleware } = require(‘http-proxy-middleware’);</p>
+<p>  module.exports = function(app) {<br>    app.use(<br>      ‘/api’,<br>      createProxyMiddleware({<br>        target: ‘<a href="http://localhost:5000&#39;">http://localhost:5000&#39;</a>,<br>        changeOrigin: true,<br>      })<br>    );<br>  };</p>
+<p>2.生产模式下：<br>jsonp， cors iframe等</p>
+<h2 id="封装网络请求"><a href="#封装网络请求" class="headerlink" title="封装网络请求"></a>封装网络请求</h2><h2 id="Router"><a href="#Router" class="headerlink" title="Router"></a>Router</h2><p>文档:<a href="https://reacttraining.com/react-router/web/guides/quick-start" target="_blank" rel="noopener">https://reacttraining.com/react-router/web/guides/quick-start</a></p>
+<p>//5的版本对React Hook更好的支持<br>1.安装<br>npm install react-router-dom  –save<br>2.路由的作用<br> 单页面应用（spa），路由跳转，切换显示视图</p>
+<p>3.使用</p>
+<h2 id="BrowserRouter-http-localhost-3000-mine-这是h5新特性"><a href="#BrowserRouter-http-localhost-3000-mine-这是h5新特性" class="headerlink" title="BrowserRouter http://localhost:3000/mine  这是h5新特性"></a>BrowserRouter <a href="http://localhost:3000/mine" target="_blank" rel="noopener">http://localhost:3000/mine</a>  这是h5新特性</h2><h2 id="如果上线之后，需要后台做处理，重定向处理，404bug"><a href="#如果上线之后，需要后台做处理，重定向处理，404bug" class="headerlink" title="如果上线之后，需要后台做处理，重定向处理，404bug"></a>如果上线之后，需要后台做处理，重定向处理，404bug</h2><p>import { BrowserRouter as Router, Switch, Route, Link } from “react-router-dom”;</p>
+<h2 id="HashRouter-http-localhost-3000-mine-锚点链接"><a href="#HashRouter-http-localhost-3000-mine-锚点链接" class="headerlink" title="HashRouter   http://localhost:3000/#/mine     锚点链接"></a>HashRouter   <a href="http://localhost:3000/#/mine" target="_blank" rel="noopener">http://localhost:3000/#/mine</a>     锚点链接</h2><p>import { HashRouter as Router, Switch, Route, Link } from “react-router-dom”;<br><Route path="/home" component={Home} /></p>
+<p>link跳转</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Link</span> <span class="attr">to</span>=<span class="string">"/home"</span>&gt;</span>home<span class="tag">&lt;/<span class="name">Link</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="exact匹配"><a href="#exact匹配" class="headerlink" title="exact匹配"></a>exact匹配</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;Route exact path&#x3D;&quot;&#x2F;mine&quot; component&#x3D;&#123;Mine&#125; &#x2F;&gt;</span><br><span class="line">&lt;Route path&#x3D;&quot;&#x2F;mine&#x2F;ucenter&quot; component&#x3D;&#123;Ucenter&#125; &#x2F;&gt;</span><br></pre></td></tr></table></figure>
+<p>strict精准匹配<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;Route strict exact path&#x3D;&quot;&#x2F;mine&quot; component&#x3D;&#123;Mine&#125; &#x2F;&gt;</span><br><span class="line">&lt;Route strict exact path&#x3D;&quot;&#x2F;mine&#x2F;ucenter&quot; component&#x3D;&#123;Ucenter&#125; &#x2F;&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="404页面-和Switch"><a href="#404页面-和Switch" class="headerlink" title="404页面 和Switch"></a>404页面 和Switch</h2><pre><code>&lt;Switch&gt;
+    &lt;Route path=&quot;/home&quot; component={Home} /&gt;
+    &lt;Route exact path=&quot;/mine&quot; component={Mine} /&gt;
+    &lt;Route path=&quot;/mine/ucenter&quot; component={Ucenter} /&gt;
+    &lt;Route component={NotFound} /&gt;
+  &lt;/Switch&gt;</code></pre><h2 id="Router-render"><a href="#Router-render" class="headerlink" title="Router  render"></a>Router  render</h2><pre><code>&lt;Route path=&quot;/mine/ucenter&quot; render={()=&gt; &lt;Ucenter  name=&quot;你好&quot;/&gt;} /&gt;</code></pre><h2 id="Router-NAVLink-高亮"><a href="#Router-NAVLink-高亮" class="headerlink" title="Router  NAVLink 高亮"></a>Router  NAVLink 高亮</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;NavLink activeClassName&#x3D;&quot;selected&quot; to&#x3D;&quot;&#x2F;home&quot;&gt;home&lt;&#x2F;NavLink&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="Router-RUL传参-？可传可不传"><a href="#Router-RUL传参-？可传可不传" class="headerlink" title="Router RUL传参      ？可传可不传"></a>Router RUL传参      ？可传可不传</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Route exact path&#x3D;&quot;&#x2F;mine&#x2F;:id?&#x2F;:name?&quot; component&#x3D;&#123;Mine&#125; &#x2F;&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Router-link传参"><a href="#Router-link传参" class="headerlink" title="Router link传参"></a>Router link传参</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;NavLink</span><br><span class="line">    activeClassName&#x3D;&quot;selected&quot;</span><br><span class="line">    to&#x3D;&#123;&#123;</span><br><span class="line">          pathname: &quot;&#x2F;home&quot;,</span><br><span class="line">          search: &quot;?sort&#x3D;name&quot;,</span><br><span class="line">          hash: &quot;#the-hash&quot;,</span><br><span class="line">          state: &#123; id: 123 &#125;,  &#x2F;&#x2F;隐形传参</span><br><span class="line">        &#125;&#125;</span><br><span class="line">      &gt;home</span><br><span class="line">&lt;&#x2F;NavLink&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Router-query-string读取参数"><a href="#Router-query-string读取参数" class="headerlink" title="Router query string读取参数"></a>Router query string读取参数</h2><p>1.当传参方式是：<a href="http://localhost:3000/#/home?id=123&amp;age=34" target="_blank" rel="noopener">http://localhost:3000/#/home?id=123&amp;age=34</a></p>
+<p>(1.) ?被当作值处理了，需要处理一下？<br>    querystring需要导入<br>    const value = querystring.parse(this.props.location.search);<br>    console.log(value.id);</p>
+<p>（2.）<br>    const value = new URLSearchParams(this.props.location.search);<br>    console.log(value.get(“id”));    </p>
+<h2 id="React-Redirect-重定向"><a href="#React-Redirect-重定向" class="headerlink" title="React  Redirect 重定向"></a>React  Redirect 重定向</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import &#123;Redirect&#125; from &quot;react-router-dom&quot;;</span><br><span class="line">&lt;Redirect to&#x3D;&quot;&#x2F;home&quot; &#x2F;&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="React-push"><a href="#React-push" class="headerlink" title="React push"></a>React push</h2><p>this.props.history.push(“./home”);<br>this.props.history.replace(“/home”);<br>注意： push是叠加的，上一次的页面依然存在内存中，replace是替换，上一次的页面不存在了</p>
+<h2 id="React高阶组件-withRouter"><a href="#React高阶组件-withRouter" class="headerlink" title="React高阶组件  withRouter"></a>React高阶组件  withRouter</h2><p>import {withRouter} from “react-router-dom”<br>export default withRouter(MineDemo);<br>MineDemo 组件名</p>
+<h2 id="React-Prompt"><a href="#React-Prompt" class="headerlink" title="React  Prompt"></a>React  Prompt</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import &#123;Prompt&#125; from &quot;react-router-dom&quot;</span><br><span class="line">&lt;Prompt</span><br><span class="line">  when&#x3D;&#123;!!this.state.name&#125;</span><br><span class="line">  message&#x3D;&quot;确定要离开吗?&quot;</span><br><span class="line">&#x2F;&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="React-路由嵌套"><a href="#React-路由嵌套" class="headerlink" title="React 路由嵌套"></a>React 路由嵌套</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#x2F;* 嵌套路由 *&#x2F;&#125;</span><br><span class="line">          &lt;Home&gt;</span><br><span class="line">            &lt;Switch&gt;</span><br><span class="line">              &lt;Route path&#x3D;&quot;&#x2F;home&#x2F;php&quot; component&#x3D;&#123;Php&#125; &#x2F;&gt;</span><br><span class="line">              &lt;Route path&#x3D;&quot;&#x2F;home&#x2F;web&quot; component&#x3D;&#123;Web&#125; &#x2F;&gt;</span><br><span class="line">            &lt;&#x2F;Switch&gt;</span><br><span class="line">          &lt;&#x2F;Home&gt;</span><br><span class="line">Home 组件下写</span><br><span class="line">&#123;&#x2F;* 路由嵌套显示的位置 *&#x2F;&#125;</span><br><span class="line"> &#123;this.props.children&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/05/19/Advanced/" data-id="ckae0smi50000opjea0oa1y8c" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/antd-%E6%8C%89%E9%9C%80%E5%8A%A0%E8%BD%BD-%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82-%E8%B7%A8%E5%9F%9F-router/" rel="tag">antd  按需加载  网络请求  跨域  router</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-base" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/05/19/base/" class="article-date">
@@ -226,7 +302,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/html-css/" rel="tag">html+css</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/antd-%E6%8C%89%E9%9C%80%E5%8A%A0%E8%BD%BD-%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82-%E8%B7%A8%E5%9F%9F-router/" rel="tag">antd  按需加载  网络请求  跨域  router</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html-css/" rel="tag">html+css</a></li></ul>
     </div>
   </div>
 
@@ -236,7 +312,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/html-css/" style="font-size: 10px;">html+css</a>
+      <a href="/tags/antd-%E6%8C%89%E9%9C%80%E5%8A%A0%E8%BD%BD-%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82-%E8%B7%A8%E5%9F%9F-router/" style="font-size: 10px;">antd  按需加载  网络请求  跨域  router</a> <a href="/tags/html-css/" style="font-size: 10px;">html+css</a>
     </div>
   </div>
 
@@ -256,6 +332,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2020/05/19/Advanced/">React 进阶</a>
+          </li>
         
           <li>
             <a href="/2020/05/19/base/">React基础</a>
