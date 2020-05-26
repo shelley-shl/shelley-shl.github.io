@@ -5,13 +5,17 @@
   
 
   
-  <title>Archives: 2020 | Hexo</title>
+  <title>css | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+  <meta name="description" content="css层叠样式表 –用于设置html页面的文本内容的样式    基础选择器        标签选择器        类选择器 . 多类名        id选择器 #        通配符选择器 *    复合选择器        后代选择器   ul li{}        子选择器     ul&gt;li{}        并集选择器   div,p,span{}        伪类选择器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css">
+<meta property="og:url" content="http://yoursite.com/2020/05/26/css/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="css层叠样式表 –用于设置html页面的文本内容的样式    基础选择器        标签选择器        类选择器 . 多类名        id选择器 #        通配符选择器 *    复合选择器        后代选择器   ul li{}        子选择器     ul&gt;li{}        并集选择器   div,p,span{}        伪类选择器">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-05-26T08:16:17.000Z">
+<meta property="article:modified_time" content="2020-05-26T08:16:58.000Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -62,154 +66,91 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/05/26/css/" class="archive-article-date">
-  <time datetime="2020-05-26T08:16:17.000Z" itemprop="datePublished">May 26</time>
+        <section id="main"><article id="post-css" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/26/css/" class="article-date">
+  <time datetime="2020-05-26T08:16:17.000Z" itemprop="datePublished">2020-05-26</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/26/css/">css</a>
+    <h1 class="article-title" itemprop="name">
+      css
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/05/26/es6-down/" class="archive-article-date">
-  <time datetime="2020-05-26T07:24:06.000Z" itemprop="datePublished">May 26</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/26/es6-down/">es6-down</a>
-    </h1>
-  
+        <p>css层叠样式表 –用于设置html页面的文本内容的样式<br>    基础选择器<br>        标签选择器<br>        类选择器 . 多类名<br>        id选择器 #<br>        通配符选择器 *<br>    复合选择器<br>        后代选择器   ul li{}<br>        子选择器     ul&gt;li{}<br>        并集选择器   div,p,span{}<br>        伪类选择器   a:link<br>              链接伪类     LVHA的顺序写<br>              :focus   主要用于 input:focus</p>
+<pre><code>文字属性 css font
+文本属性 css text 颜色 对齐 装饰 文本缩进 行间距
+css引入样式
+    行内样式表
+    内部样式表
+    外部样式表
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/05/23/es6/" class="archive-article-date">
-  <time datetime="2020-05-23T10:27:08.000Z" itemprop="datePublished">May 23</time>
-</a>
+emmet语法
+    快速生成html
+    快速生成css
+
+css元素的显示模式   
+   html块元素   独占一行 
+   p标签不能放div，文字类的标签不能放块元素
+   html行内元素  一行可多个
+   行内元素不能放块元素 ，链接里面不能再放链接
+   行内块元素
+   显示模式的转换  display:inline-block;
+   snipaste 截图工具
+
+   文字垂直剧中   line-height;
+   背景图片 background 超大图片剧中显示 background——position:x y;  如果只有一个值一定是x轴
+   背景图片固定 
+   背景颜色透明 rgba(0,0,0,0.4);
+css的三大特性
+   层叠性   
+   继承性   行高的继承性 font：12px/1.5 &apos;微软雅黑&apos;； 行高是当前文字大小的1.5 倍  12*1.5。行高可加单位也可不加单位
+   优先级
+     权重叠加 复合选择器有权重叠加的问题  !impo &gt;行内&gt;ID&gt;.&gt;标签
+
+盒子模型
+    padding 盒子与内容的距离
+    margin  盒子与盒子之前的距离  
+    border 会影响盒子的宽高
+    注意： 如果盒子本身没有指定width/height,此时padding不会撑开盒子的大小
+
+    嵌套块元素塌陷--外边距合并： 
+       1.给父元素定义边框
+       2.给父元素定义内边距
+       3.给父元素添加overfiow：hidden</code></pre>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/23/es6/">es6</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/05/19/beginner/" class="archive-article-date">
-  <time datetime="2020-05-19T15:21:55.000Z" itemprop="datePublished">May 19</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/05/26/css/" data-id="ckanncuy8000028s6hrfa3jes" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/19/beginner/">React进阶</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/05/19/base/" class="archive-article-date">
-  <time datetime="2020-05-19T14:09:30.000Z" itemprop="datePublished">May 19</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/19/base/">React基础</a>
-    </h1>
-  
-
-    </header>
+    </footer>
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/05/13/hah/" class="archive-article-date">
-  <time datetime="2020-05-13T13:53:52.000Z" itemprop="datePublished">May 13</time>
-</a>
-      
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/13/hah/">pc端网页布局  ---精通网页布局</a>
-    </h1>
   
+    <a href="/2020/05/26/es6-down/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">es6-down</div>
+    </a>
+  
+</nav>
 
-    </header>
-  </div>
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/05/13/hello-world/" class="archive-article-date">
-  <time datetime="2020-05-13T13:29:38.000Z" itemprop="datePublished">May 13</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/13/hello-world/">Hello World</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
 
 </section>
         
