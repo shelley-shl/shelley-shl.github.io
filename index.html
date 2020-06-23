@@ -64,6 +64,119 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-javascript" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/06/23/javascript/" class="article-date">
+  <time datetime="2020-06-23T07:30:26.000Z" itemprop="datePublished">2020-06-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/23/javascript/">javascript</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>javaScript 基础</p>
+<p>js脚本语言，实现业务逻辑和页面控制  解释型语言，边解释边执行</p>
+<p>浏览器分2部分，渲染引擎，js引擎</p>
+<p>渲染引擎：解析html ，css代码， 俗称内核<br>js引擎： 解析js文件</p>
+<p>js的组成   DOM BOM</p>
+<p>1.变量<br>2.变量的数据类型 简单数据类型  复杂数据类型<br>isNaN() 判断非数字<br>js推荐使用单引号‘’； 引号嵌套 （外单内双，外双内单）</p>
+<p>字符串长度的拼接   用 + 号</p>
+<p>布尔值  true 是 1    false 是 0</p>
+<p>声明一个变量未赋值，就是undefined未定义的数据类型<br>undefined+数字 是NaN</p>
+<p>null 空值</p>
+<p>3.typeof 检测数据类型     null是object类型<br>注意：prompt取的值是string</p>
+<p>4.数据类型转换<br>    1.转换为字符串   变量.toString()   String(变量)    隐式转换： 利用+拼接字符串的方法（变量 +‘’）<br>    2.转换为数字型    parseInt(变量) 得到的是整数<br>                    parseFloat(变量)<br>                    Number()  强制转换<br>                    隐式转换    - * ／<br>    3.转换成布尔值    Boolean();    0 null ‘’   NaN  undefined  这5个会转成false   </p>
+<ol start="5">
+<li>++num  num++    –num   num–</li>
+</ol>
+<p>6.逻辑运算符中:短路运算  &amp;&amp; ||<br>  （1）与短路， 当第一个表达式为真，则返回表达式2，当第一个表达式为假，则返回表达式1<br>  （2）或短路， 当第一个表达式为真，则返回表达式1，当第一个表达式为假，则返回第二个表达式</p>
+<h2 id="7-运算符的优先级"><a href="#7-运算符的优先级" class="headerlink" title="7.运算符的优先级"></a>7.运算符的优先级</h2><p>逻辑运算符级别最低，但是要先&amp;&amp; 后||</p>
+<h2 id="8-流程控制：顺序结构，分支结构-判断-if-swich-，循环结构-三种代码执行顺序"><a href="#8-流程控制：顺序结构，分支结构-判断-if-swich-，循环结构-三种代码执行顺序" class="headerlink" title="8.流程控制：顺序结构，分支结构(判断 if swich)，循环结构 三种代码执行顺序"></a>8.流程控制：顺序结构，分支结构(判断 if swich)，循环结构 三种代码执行顺序</h2><p>if 与 swich 区别  if范围判断    swich固定值 效率更高</p>
+<p>三元表达式  条件表达式？表达式1：表达式2</p>
+<p>for循环<br>while循环  先判断后执行<br>do while循环  先执行循环体do，再判断条件while，若果条件为真，继续执行do，否则退出循环</p>
+<p>continue 跳出本次循环，继续执行下次循环<br>break 直接跳出循环(结束)<br>return  不仅退出循环，还返回return语句重的值，同时结束当前函数体中的代码</p>
+<h2 id="9-数组"><a href="#9-数组" class="headerlink" title="9.数组"></a>9.数组</h2><p> 就是一组数据的集合，并且存储在单个变量下，数据里面的数据成为数组元素<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">创建数组 1.var arr &#x3D; new Array();    &#x2F;&#x2F;只写一个值表示数组长度</span><br><span class="line">        2. 字面量 var arr &#x3D; [];</span><br><span class="line"></span><br><span class="line">遍历数组  for</span><br></pre></td></tr></table></figure><br> 注意： 数组索引号和数组的长度没有任何关系</p>
+<h2 id="10-函数"><a href="#10-函数" class="headerlink" title="10.函数"></a>10.函数</h2><p>封装了一段可以重复调用的代码，就是让大量代码重复使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">声明函数: 声明函数关键字function全部小写，函数不调用自己不执行</span><br><span class="line">1.function 函数名()&#123;</span><br><span class="line">   函数体</span><br><span class="line">&#125;</span><br><span class="line">2.函数表达式  </span><br><span class="line">var 变量名 &#x3D; function()&#123;&#125;</span><br><span class="line"> </span><br><span class="line">调用函数：函数名();</span><br><span class="line"></span><br><span class="line">函数的封装： 打包，把函数整合成一个整体</span><br><span class="line">函数的参数：1.形参   function 函数名(行参1,行参2...)&#123;&#125;</span><br><span class="line">          2.实参   函数名(实参1，实参2...)</span><br><span class="line"></span><br><span class="line">函数的返回值： return </span><br><span class="line">注意：return 终止函数，之后的代码不会执行，只能返回一个值，逗号隔开以最后一个为准</span><br><span class="line">     函数没有return，则返回undefind</span><br><span class="line"></span><br><span class="line">arguments：当前函数的一个内置对象，存储了传递过来的所有实参  </span><br><span class="line"></span><br><span class="line">function fn()&#123;</span><br><span class="line">        console.log(arguments);</span><br><span class="line">      &#125;</span><br><span class="line">fn(1,2,3);   </span><br><span class="line"></span><br><span class="line">注意： 伪数组，具有数组的length属性，按照索引方式存储，也可按数组方式遍历，但是没有数据的一些方法</span><br><span class="line"></span><br><span class="line">函数可以调用另外一个函数</span><br><span class="line">&#96;&#96;&#96; </span><br><span class="line"></span><br><span class="line">## 11.作用域  js没有块级作用域</span><br><span class="line">1.javascript作用域：就是代码名称(变量)在某个范围内起作用和效果，提高程序的可靠性，减少命名冲突</span><br><span class="line">2.js作用域(es6之前)：</span><br><span class="line">    (1)全局作用域----整个script标签，单独的js文件 </span><br><span class="line">       注意：在函数内部没有声明直接赋值的变量也是全局变量</span><br><span class="line">    (2)局部作用域----在函数内部就是局部作用域</span><br><span class="line">       注意：函数形参也是局部变量</span><br><span class="line">3.作用域链：内部函数访问外部函数的变量，采用的是链式查找的方式来决定取那个值，这种结构称为作用域链   （就近原则）</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 12.js预解析</span><br></pre></td></tr></table></figure>
+<p>  js引擎运行js分2步，<br>  预解析：js引擎会把js中所有的var function 提升到当前作用域的最前面<br>    变量预解析(变量提升)：就是把所有的变量声明提升到当前的作用域的最前面，不提升赋值操作<br>    console.log(num); // undefined<br>    var num=10;</p>
+<pre><code>函数预解析(函数提升)；就是把所有函数声明提升到当前作用域的最前面，不调用函数
+fun();
+function fun(){}</code></pre><p>  代码执行：按照代码书写的顺序从上往下执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">## 13,js对象</span><br><span class="line"></span><br><span class="line">对象：一组无序的相关属性和方法的集合  字符串，数组，</span><br><span class="line">属性：事物的特征，名词</span><br><span class="line">方法：事物的行为，动词</span><br><span class="line"></span><br><span class="line">创建对象：</span><br></pre></td></tr></table></figure>
+<p> （1）  var obj = {};<br>  (2)  var obj = new Object();<br>  (3)  使用构造函数创建对象<br>   function 构造函数名(){<br>    this.属性 = 值;<br>    this.方法 = function(){  }<br>    new 构造函数名(‘刘德华’,18,’男’);   //调用函数<br>注意：1.构造函数函数名首字母要大写,<br>     2.构造函数不需要return就可以返回结果<br>     3.调用构造函数必须使用new<br>     4.只要new Star()调用函数就创建了构造函数<br>     5.属性和方法前面必须加this</p>
+<pre><code>构造函数：就是把我们对象里面一些相同的属性和方法抽象出来封装到函数里面
+
+使用对象：
+
+遍历对象： for in  k 变量输出得到是属性名
+
+注意：
+for in遍历的是数组的索引（即键名），而for of遍历的是数组元素值。
+forEach 不可以return 返回到外层
+map 可以return 返回到外层
+
+## 14.js内置对象
+javascrpit 3种对象  自定义对象   内置对象   浏览器对象(js独有的，js API讲解)
+
+内置对象：js语言自带的一些对象  
+(1)日期对象 Date()   是一个构造函数，必须使用new 来创建日期对象
+
+date对象是基于1970年1.1起的毫秒数(世界标准时间)
+
+获取date总的毫秒数(时间戳)：  valueof()  getTime()  Date.now()  +new Date()
+
+(2) 数组的内置对象
+
+1. Array.isArray()  ／  instanceof    //检测是否是数组
+2. push()   //在数组的末尾添加一个或者多个数组元素  给数组追加新的元素
+
+注意：push() 完毕后，返回的结果是 新数组的长度
+
+3. unshift() //在数组前面添加数组元素
+4. pop() //删除数组最后的一个元素   无参数  返回值是删除的元素
+5. shift() //删除数组的第一个元素  无参数  
+6. sort()  //单位数可以，多位数有问题
+7. indexOf()   //返回数组元素的索引值，不存在返回-1
+8.toString() ／join(分隔符)    // 数组转换成字符串   
+
+字符串操作
+1. substr();  //字符串截取
+2. concat();  //可以把多个参数添加到指定字符串的尾部
+3. split(分隔符); // 字符串转换成数组
+
+
+总结：
+
+简单数据类型(值类型)和复杂数组类型(引用类型)
+null 返回一个空对象 object
+
+简单数据类型传参 --- 根据值
+复杂类型传参  ----根据地址</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/06/23/javascript/" data-id="ckbrm1ohe000024jh0h5w0w8i" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-css" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/05/26/css/" class="article-date">
@@ -489,7 +602,7 @@ css的三大特性
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li></ul>
     </div>
   </div>
 
@@ -500,6 +613,10 @@ css的三大特性
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2020/06/23/javascript/">javascript</a>
+          </li>
         
           <li>
             <a href="/2020/05/26/css/">css</a>
@@ -515,10 +632,6 @@ css的三大特性
         
           <li>
             <a href="/2020/05/19/beginner/">React进阶</a>
-          </li>
-        
-          <li>
-            <a href="/2020/05/19/base/">React基础</a>
           </li>
         
       </ul>
