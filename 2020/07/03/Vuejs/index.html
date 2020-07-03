@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Vuejs | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Vue基础渐进的javaScript框架 声明式渲染 – 组建  – 客户端路由 – 状态管理 – 项目构建 vue基本使用 123el：元素挂载位置， 值是css选择器 或者dom元素data： 模型数据， 值是对象&amp;#123;&amp;#123;&amp;#125;&amp;#125;   插值表达式   支持简单的计算 模版语法12345678910111213141516171819202122232425262">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vuejs">
+<meta property="og:url" content="http://yoursite.com/2020/07/03/Vuejs/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Vue基础渐进的javaScript框架 声明式渲染 – 组建  – 客户端路由 – 状态管理 – 项目构建 vue基本使用 123el：元素挂载位置， 值是css选择器 或者dom元素data： 模型数据， 值是对象&amp;#123;&amp;#123;&amp;#125;&amp;#125;   插值表达式   支持简单的计算 模版语法12345678910111213141516171819202122232425262">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-07-03T12:51:56.000Z">
+<meta property="article:modified_time" content="2020-07-03T12:52:53.000Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Vuejs" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/03/Vuejs/" class="article-date">
+  <time datetime="2020-07-03T12:51:56.000Z" itemprop="datePublished">2020-07-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Vuejs
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Vue基础<br>渐进的javaScript框架</p>
+<p>声明式渲染 – 组建  – 客户端路由 – 状态管理 – 项目构建</p>
+<p>vue基本使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">el：元素挂载位置， 值是css选择器 或者dom元素</span><br><span class="line">data： 模型数据， 值是对象</span><br><span class="line">&#123;&#123;&#125;&#125;   插值表达式   支持简单的计算</span><br></pre></td></tr></table></figure>
+<h2 id="模版语法"><a href="#模版语法" class="headerlink" title="模版语法"></a>模版语法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">1.指令 本质就是自定义属性  格式以v-开头</span><br><span class="line">    v-cloak  闪动</span><br><span class="line">    v-text</span><br><span class="line">    v-html  安全问题，第三方数据不可用</span><br><span class="line">    v-pre   跳过编译过程  显示原始信息 </span><br><span class="line">    v-once  只编译一次  显示内容之后，就不在有响应式功能  可以提高性能</span><br><span class="line"></span><br><span class="line"> 2.数据响应式  数据的变化导致页面的内容变化</span><br><span class="line"> 3.数据绑定    数据填充到标签元素中</span><br><span class="line"> 4.双向数据绑定 </span><br><span class="line">    v-model</span><br><span class="line"> 5.vue-router 动态路由匹配</span><br><span class="line">    props 路由传递参数</span><br><span class="line">    props值 分为3种类型</span><br><span class="line">         1.props:true</span><br><span class="line">         2.对象类型</span><br><span class="line">         3.函数类型  箭头函数</span><br><span class="line"></span><br><span class="line">6.事件绑定  v-on:click  或者 @click</span><br><span class="line">    methods&#123;&#125;   函数定义在methods属性中</span><br><span class="line">    传参：</span><br><span class="line"></span><br><span class="line">    阻止事件冒泡  1.event.stopPropagetion()</span><br><span class="line">                2.事件修饰符：v-on:click.stop</span><br><span class="line"></span><br><span class="line">    阻止默认行为  1.event.preventDefault()</span><br><span class="line">                2.事件修饰符：v-on:click.prevent</span><br><span class="line"></span><br><span class="line">7.属性绑定  v-bind 指令  v-bind:href&#x3D;&quot;&quot;  或者  :href&#x3D;&quot;&quot;</span><br><span class="line"></span><br><span class="line">8.样式绑定css   1.对象语法 v-bind:class&#x3D;&quot;&#123;&#125;&quot;</span><br><span class="line">              2.数组语法 v-bind:class&#x3D;&quot;[]&quot;</span><br><span class="line">注意： 默认的css样式会保留</span><br><span class="line">   </span><br><span class="line">样式绑定style  v-bind:style&#x3D;&quot;&#123;&#125;&quot;  样式在data中定义</span><br></pre></td></tr></table></figure>
+
+<p>9.分支循环</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">v-if   v-if&#x3D;&quot;score&gt;&#x3D;90&quot;  元素是否渲染到页面</span><br><span class="line">v-else</span><br><span class="line">v-else-if</span><br><span class="line">v-show   控制元素样式是否显示 display</span><br><span class="line"></span><br><span class="line">v-for  循环结构</span><br><span class="line">1.遍历数组</span><br><span class="line">v-for&#x3D;&quot;(item, index) in myFruits&quot; :key&#x3D;&quot;index&quot;   key的作用，区分不同的元素，从而提高性能</span><br><span class="line">2.遍历对象</span><br><span class="line">v-for&#x3D;&quot;(value,key,index) in obj&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="Vue常用特性"><a href="#Vue常用特性" class="headerlink" title="Vue常用特性"></a>Vue常用特性</h2><p>表单操作  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">input radio checkbox  select</span><br><span class="line">   v-model.number   &#x2F;&#x2F; 转化为数值</span><br><span class="line">   v-model.trim    &#x2F;&#x2F;去掉空白字符串</span><br><span class="line">   v-model.lazy     &#x2F;&#x2F;  将input事件转化为change事件</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">自定义指令   全局指令， </span><br><span class="line">                    局部指令</span><br><span class="line"></span><br><span class="line">计算属性   computed:&#123;&#125; </span><br><span class="line">   计算属性是基于它们的依赖进行缓存的</span><br><span class="line">  </span><br><span class="line">过滤器  格式化数据</span><br><span class="line">侦听器  watch&#123;&#125;  数据变化时，异步数据，或者开销较大的数据</span><br></pre></td></tr></table></figure>
+<p>生命周期  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.初始化</span><br><span class="line">2.更新</span><br><span class="line">3.销毁</span><br></pre></td></tr></table></figure>
+<h2 id="组件化开发"><a href="#组件化开发" class="headerlink" title="组件化开发"></a>组件化开发</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vue.component(&#39;&#39;,&#123;&#125;)</span><br><span class="line"> 组件的 data  是一个函数</span><br><span class="line"> 组件的模版内容必须有单个的根元素</span><br><span class="line"> 组件的命名方式； 驼峰式   短横线的方式</span><br><span class="line"> 如果使用驼峰式命名，那么使用的时候只能在字符串模版中使用，在普通的标签模版中，只能使用短横线的方式</span><br></pre></td></tr></table></figure>
+<h2 id="Vue调试工具-Devtools"><a href="#Vue调试工具-Devtools" class="headerlink" title="Vue调试工具   Devtools"></a>Vue调试工具   Devtools</h2><h2 id="组件之间数据交互"><a href="#组件之间数据交互" class="headerlink" title="组件之间数据交互"></a>组件之间数据交互</h2> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">1.父组件传子组件   props</span><br><span class="line">     props 传递数据的原则：单向数据流</span><br><span class="line"></span><br><span class="line">2.子组件传父组件    通过自定义事件向父组件传值</span><br><span class="line"> 子组件 $emit(&quot;&quot;,0.1) 自定义件事件，父组件监听   接受值  $event</span><br><span class="line"></span><br><span class="line">3.兄弟组件之间传值</span><br><span class="line">  单独的事件中心管理组件之间传值</span><br><span class="line">  var eventHub &#x3D; new Vue()</span><br><span class="line">  监听事件</span><br><span class="line">  在mounted：function()中监听</span><br><span class="line">  eventHub.$on(&#39;add_todo&#39;,addTodo)</span><br><span class="line">  触发事件</span><br><span class="line">  eventHub.$emit(&#39;&#39;,)</span><br><span class="line"></span><br><span class="line">  插槽  父组件向子组件传递模版</span><br><span class="line">  位置  子组件  &lt;slot&gt;&lt;&#x2F;slot&gt;</span><br><span class="line">   具名插槽  &lt;slot name&#x3D;&quot;header&quot;&gt;&lt;&#x2F;slot&gt;  &lt;p slot&#x3D;&quot;header&quot;&gt;我是头&lt;&#x2F;p&gt;</span><br><span class="line">   作用域插槽</span><br></pre></td></tr></table></figure>
+<h2 id="前后端交互-网络请求"><a href="#前后端交互-网络请求" class="headerlink" title="前后端交互 网络请求"></a>前后端交互 网络请求</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">1. Promise 用法  是一个对象，是异步编程的一种解决方案</span><br><span class="line">  Promise.all    &#x2F;&#x2F;所有任务都完成返回</span><br><span class="line">  Promise.race  &#x2F;&#x2F;并发处理多个异步，只要有一个任务完成就返回</span><br><span class="line">2. 基于Promise---fetch API </span><br><span class="line">    常用配置选项</span><br><span class="line">    method：http请求方式  get  delete   post  put</span><br><span class="line">    body: 数据格式</span><br><span class="line">    headers：</span><br><span class="line">3. fetch 响应结果</span><br><span class="line">    text();</span><br><span class="line">    json(); </span><br><span class="line">4. axios  </span><br><span class="line">      get传参    1.url传递传数</span><br><span class="line">                2.params传递参数</span><br><span class="line"></span><br><span class="line">      delete传参</span><br><span class="line">      post传参</span><br><span class="line">      put</span><br><span class="line"></span><br><span class="line">   axios的全局配置 </span><br><span class="line">        1.设置默认地址  axios.defaults.baseURL</span><br><span class="line">        2.设置请求头    axios.defaults.headers</span><br><span class="line">   axios拦截器</span><br><span class="line">        1.请求拦截器</span><br><span class="line">        2.响应拦截器</span><br><span class="line">       </span><br><span class="line">   支持浏览器和node.js</span><br><span class="line">   支持Promise</span><br><span class="line">   拦截请求和响应</span><br><span class="line">   自动转换json数据</span><br><span class="line"></span><br><span class="line">   5. async／await  代码更简洁</span><br></pre></td></tr></table></figure>
+<h2 id="Vue-路由"><a href="#Vue-路由" class="headerlink" title="Vue 路由"></a>Vue 路由</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">前端路由  hash   用户事件与事件处理函数之间的对应关系</span><br><span class="line"></span><br><span class="line">Vue Router 是官方路由管理器</span><br><span class="line">路由重定向  Redirect</span><br><span class="line">嵌套路由  </span><br><span class="line">子路由规则是数组  children[]</span><br><span class="line">路由传参       取值  $route.params.id</span><br><span class="line"> </span><br><span class="line"> 路由组件传递参数 1.快速传参 props:true</span><br><span class="line">               2.对象类型  props:&#123;uname:&#39;xiaoli&#39;,age:90&#125;</span><br><span class="line">               3.函数类型  props:route&#x3D;&gt;(&#123;uname:&#39;xiaomign&#39;,id:route.params.id&#125;)</span><br><span class="line"> </span><br><span class="line">命名路由</span><br><span class="line"> &lt;router-link :to&#x3D;&quot;&#123;name:&#39;user&#39;,params:&#123;id:1&#125;&quot;&gt;&lt;&#x2F;router-link&gt;</span><br><span class="line"></span><br><span class="line">页面中导航2种方式</span><br><span class="line">声明式  通过标签</span><br><span class="line"></span><br><span class="line">编程式导航</span><br><span class="line">this.$router.push(&#39;&#39;);</span><br><span class="line">this.$router.go(&#39;&#39;);</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/07/03/Vuejs/" data-id="ckc67xklg0000vtjh4gch1li1" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/07/01/jsAPI/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">jsAPI</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/html-css/" rel="tag">html+css</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/html-css/" style="font-size: 10px;">html+css</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/07/03/Vuejs/">Vuejs</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/01/jsAPI/">jsAPI</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/23/javascript/">javascript</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/26/css/">css</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/26/es6-down/">es6-down</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
