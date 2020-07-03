@@ -15,7 +15,7 @@
 <meta property="og:description" content="javaScript 基础 js脚本语言，实现业务逻辑和页面控制  解释型语言，边解释边执行 浏览器分2部分，渲染引擎，js引擎 渲染引擎：解析html ，css代码， 俗称内核js引擎： 解析js文件 js的组成   DOM BOM 1.变量 1234567891011121314152.变量的数据类型 简单数据类型  复杂数据类型isNaN() 判断非数字js推荐使用单引号‘’； 引号嵌套 （">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-06-23T07:30:26.000Z">
-<meta property="article:modified_time" content="2020-07-03T13:03:49.000Z">
+<meta property="article:modified_time" content="2020-07-03T13:56:52.000Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -100,9 +100,9 @@
 <ol start="5">
 <li>++num  num++    –num   num–</li>
 </ol>
-<p>6.逻辑运算符中:短路运算  &amp;&amp; ||<br>  （1）与短路， 当第一个表达式为真，则返回表达式2，当第一个表达式为假，则返回表达式1<br>  （2）或短路， 当第一个表达式为真，则返回表达式1，当第一个表达式为假，则返回第二个表达式</p>
+<h2 id="6-逻辑运算符中-短路运算-amp-amp"><a href="#6-逻辑运算符中-短路运算-amp-amp" class="headerlink" title="6.逻辑运算符中:短路运算  &amp;&amp; ||"></a>6.逻辑运算符中:短路运算  &amp;&amp; ||</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">（1）与短路， 当第一个表达式为真，则返回表达式2，当第一个表达式为假，则返回表达式1</span><br><span class="line">（2）或短路， 当第一个表达式为真，则返回表达式1，当第一个表达式为假，则返回第二个表达式</span><br></pre></td></tr></table></figure>
 <h2 id="7-运算符的优先级"><a href="#7-运算符的优先级" class="headerlink" title="7.运算符的优先级"></a>7.运算符的优先级</h2><p>逻辑运算符级别最低，但是要先&amp;&amp; 后||</p>
-<h2 id="8-流程控制：顺序结构，分支结构-判断-if-swich-，循环结构-三种代码执行顺序"><a href="#8-流程控制：顺序结构，分支结构-判断-if-swich-，循环结构-三种代码执行顺序" class="headerlink" title="8.流程控制：顺序结构，分支结构(判断 if swich)，循环结构 三种代码执行顺序"></a>8.流程控制：顺序结构，分支结构(判断 if swich)，循环结构 三种代码执行顺序</h2><p>if 与 swich 区别  if范围判断    swich固定值 效率更高</p>
+<h2 id="8-流程控制："><a href="#8-流程控制：" class="headerlink" title="8.流程控制："></a>8.流程控制：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">顺序结构，分支结构(判断 if swich)，循环结构 三种代码执行顺序</span><br><span class="line">if 与 swich 区别  if范围判断    swich固定值 效率更高</span><br></pre></td></tr></table></figure>
 <p>三元表达式  条件表达式？表达式1：表达式2</p>
 <p>for循环</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">while循环  先判断后执行</span><br><span class="line">do while循环  先执行循环体do，再判断条件while，若果条件为真，继续执行do，否则退出循环</span><br><span class="line">continue 跳出本次循环，继续执行下次循环</span><br><span class="line">break 直接跳出循环(结束)</span><br><span class="line">return  不仅退出循环，还返回return语句重的值，同时结束当前函数体中的代码</span><br></pre></td></tr></table></figure>
@@ -115,17 +115,18 @@
 <pre><code>函数预解析(函数提升)；就是把所有函数声明提升到当前作用域的最前面，不调用函数
 fun();
 function fun(){}</code></pre><p>  代码执行：按照代码书写的顺序从上往下执行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">## 13,js对象</span><br><span class="line"></span><br><span class="line">对象：一组无序的相关属性和方法的集合  字符串，数组，</span><br><span class="line">属性：事物的特征，名词</span><br><span class="line">方法：事物的行为，动词</span><br><span class="line"></span><br><span class="line">创建对象：</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## 13,js对象</span><br></pre></td></tr></table></figure>
+<p>对象：一组无序的相关属性和方法的集合  字符串，数组，<br>属性：事物的特征，名词<br>方法：事物的行为，动词</p>
+<p>创建对象：</p>
 <p> （1）  var obj = {};<br>  (2)  var obj = new Object();<br>  (3)  使用构造函数创建对象<br>   function 构造函数名(){<br>    this.属性 = 值;<br>    this.方法 = function(){  }<br>    new 构造函数名(‘刘德华’,18,’男’);   //调用函数<br>注意：1.构造函数函数名首字母要大写,<br>     2.构造函数不需要return就可以返回结果<br>     3.调用构造函数必须使用new<br>     4.只要new Star()调用函数就创建了构造函数<br>     5.属性和方法前面必须加this</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">构造函数：就是把我们对象里面一些相同的属性和方法抽象出来封装到函数里面</span><br><span class="line">          </span><br><span class="line">使用对象：</span><br><span class="line"></span><br><span class="line">遍历对象： for in  k 变量输出得到是属性名</span><br><span class="line"> </span><br><span class="line">注意：</span><br></pre></td></tr></table></figure>
 <p>for in遍历的是数组的索引（即键名），而for of遍历的是数组元素值。<br>forEach 不可以return 返回到外层<br>map 可以return 返回到外层</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## 14.js内置对象</span><br></pre></td></tr></table></figure>
 <p>javascrpit 3种对象  自定义对象   内置对象   浏览器对象(js独有的，js API讲解)</p>
-<p>内置对象：js语言自带的一些对象<br>(1)日期对象 Date()   是一个构造函数，必须使用new 来创建日期对象</p>
-<p>date对象是基于1970年1.1起的毫秒数(世界标准时间)</p>
+<p>内置对象：js语言自带的一些对象  </p>
+<h2 id="1-日期对象-Date-是一个构造函数，必须使用new-来创建日期对象"><a href="#1-日期对象-Date-是一个构造函数，必须使用new-来创建日期对象" class="headerlink" title="(1)日期对象 Date()   是一个构造函数，必须使用new 来创建日期对象"></a>(1)日期对象 Date()   是一个构造函数，必须使用new 来创建日期对象</h2><p>date对象是基于1970年1.1起的毫秒数(世界标准时间)</p>
 <p>获取date总的毫秒数(时间戳)：  valueof()  getTime()  Date.now()  +new Date()</p>
-<p>(2) 数组的内置对象</p>
-<ol>
+<h2 id="2-数组的内置对象"><a href="#2-数组的内置对象" class="headerlink" title="(2) 数组的内置对象"></a>(2) 数组的内置对象</h2><ol>
 <li>Array.isArray()  ／  instanceof    //检测是否是数组</li>
 <li>push()   //在数组的末尾添加一个或者多个数组元素  给数组追加新的元素</li>
 </ol>
@@ -138,19 +139,15 @@ function fun(){}</code></pre><p>  代码执行：按照代码书写的顺序从�
 <li>indexOf()   //返回数组元素的索引值，不存在返回-1</li>
 <li>toString() ／join(分隔符)    // 数组转换成字符串   </li>
 </ol>
-<p>字符串操作</p>
-<ol>
+<h2 id="字符串操作"><a href="#字符串操作" class="headerlink" title="字符串操作"></a>字符串操作</h2><ol>
 <li>substr();  //字符串截取</li>
 <li>concat();  //可以把多个参数添加到指定字符串的尾部</li>
 <li>split(分隔符); // 字符串转换成数组</li>
 </ol>
-<pre><code>总结：
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">总结：</span><br></pre></td></tr></table></figure>
+<p>简单数据类型(值类型)和复杂数组类型(引用类型)<br>null 返回一个空对象 object</p>
+<p>简单数据类型传参 — 根据值<br>复杂类型传参  —-根据地址<br>```</p>
 
-简单数据类型(值类型)和复杂数组类型(引用类型)
-null 返回一个空对象 object
-
-简单数据类型传参 --- 根据值
-复杂类型传参  ----根据地址</code></pre>
       
     </div>
     <footer class="article-footer">
