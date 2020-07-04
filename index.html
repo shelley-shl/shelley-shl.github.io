@@ -64,6 +64,47 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-vue-cli" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/04/vue-cli/" class="article-date">
+  <time datetime="2020-07-04T12:53:06.000Z" itemprop="datePublished">2020-07-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/04/vue-cli/">vue-cli</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="项目目录"><a href="#项目目录" class="headerlink" title="项目目录"></a>项目目录</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">build ----- 用来使用webpack打包使用的</span><br><span class="line">config ---- 用来做整个项目的配置目录</span><br><span class="line">node_modules -----  项目使用依赖</span><br><span class="line">src -----   vue源代码</span><br><span class="line">  assets ---- 存放静态资源</span><br><span class="line">  components----  vue组件</span><br><span class="line">  router  -----    用来配置项目中的路由</span><br><span class="line">  App.vue  -----   项目根组件</span><br><span class="line">  main.js  -----   项目中主入口</span><br><span class="line">  babelrc  -----   将es6语法转为es5</span><br><span class="line">  package.json ---- 依赖管理，不建议手动修改</span><br><span class="line">  package-lock.json ---- package.json加锁</span><br></pre></td></tr></table></figure>
+<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">beforeCreate: function() &#123;</span><br><span class="line">   console.group(&#39;------beforeCreate创建前状态------&#39;);</span><br><span class="line">   </span><br><span class="line"> &#125;,</span><br><span class="line"> created: function() &#123;</span><br><span class="line">   console.group(&#39;------created创建完毕状态------&#39;);</span><br><span class="line">   </span><br><span class="line"> &#125;,</span><br><span class="line"> beforeMount: function() &#123;</span><br><span class="line">   console.group(&#39;------beforeMount挂载前状态------&#39;);</span><br><span class="line">   </span><br><span class="line"> &#125;,</span><br><span class="line"> mounted: function() &#123;</span><br><span class="line">   console.group(&#39;------mounted 挂载结束状态------&#39;);</span><br><span class="line">   </span><br><span class="line"> &#125;,</span><br><span class="line"> beforeUpdate: function () &#123;</span><br><span class="line">   console.group(&#39;beforeUpdate 更新前状态&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;》&#39;);</span><br><span class="line">   </span><br><span class="line"> &#125;,</span><br><span class="line"> updated: function () &#123;</span><br><span class="line">   console.group(&#39;updated 更新完成状态&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;》&#39;);</span><br><span class="line">   </span><br><span class="line"> &#125;,</span><br><span class="line"> beforeDestroy: function () &#123;</span><br><span class="line">   console.group(&#39;beforeDestroy 销毁前状态&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;》&#39;);</span><br><span class="line"> </span><br><span class="line"> &#125;,</span><br><span class="line"> destroyed: function () &#123;</span><br><span class="line">   console.group(&#39;destroyed 销毁完成状态&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;》&#39;);</span><br><span class="line"> </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="在脚手架使用-axios"><a href="#在脚手架使用-axios" class="headerlink" title="在脚手架使用 axios"></a>在脚手架使用 axios</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1.安装</span><br><span class="line">  npm install axios --save-dev</span><br><span class="line">2.配置main.js 中引入axios</span><br><span class="line">import axios from &#39;axios&#39;</span><br><span class="line">Vue.prototype.$http &#x3D; axios;  &#x2F;&#x2F;修改内部的$http为axios</span><br><span class="line">3.使用axios</span><br><span class="line">this.$http.get(&quot;&quot;).then((res)&#x3D;&gt;&#123;</span><br><span class="line">        &#x2F;&#x2F;console.log(res.data),</span><br><span class="line">     &#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="打包部署"><a href="#打包部署" class="headerlink" title="打包部署"></a>打包部署</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.在项目根目录下执行：</span><br><span class="line">   npm  run build   &#x2F;&#x2F;打包项目必须在生产上运行 node.js</span><br><span class="line">2. 打包之后的变化</span><br><span class="line">   项目中出现dist目录，就是部署目录</span><br></pre></td></tr></table></figure>
+
+<h2 id="Element-UI-的使用"><a href="#Element-UI-的使用" class="headerlink" title="Element-UI 的使用"></a>Element-UI 的使用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">官网： https:&#x2F;&#x2F;element.eleme.cn&#x2F;#&#x2F;zh-CN</span><br><span class="line"></span><br><span class="line">## 命令安装</span><br><span class="line"></span><br><span class="line">1.安装依赖包  npm i element-ui -S</span><br><span class="line">2.导入相关资源</span><br><span class="line">  import ElementUI from &#39;element-ui&#39;</span><br><span class="line"> import  &#39;element-ui&#x2F;lib&#x2F;theme-chalk&#x2F;index.css&#39;</span><br><span class="line">3.配置  vue插件</span><br><span class="line">   Vue.use(ElementUI)</span><br><span class="line"></span><br><span class="line">## 基于图形化界面安装   vue-cli3.x以上版本</span><br><span class="line"> 1.运行 vue ui命令，打开图形化界面</span><br><span class="line"> 2.通过vue 项目管理器， 进入具体的项目配置面板</span><br><span class="line"> 3.点击插件----&gt;添加插件，进入插件查询面板</span><br><span class="line"> 4.搜索 vue-cli-plugin-element 并安装</span><br><span class="line"> 5.配置插件，实现按需导入，减少打包后项目的体积</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/07/04/vue-cli/" data-id="ckc7ne3kq0000apjg2g3ofhy6" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Vuejs" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/07/03/Vuejs/" class="article-date">
@@ -662,56 +703,12 @@ css的三大特性
 
 
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/05/13/hello-world/" class="article-date">
-  <time datetime="2020-05-13T13:29:38.000Z" itemprop="datePublished">2020-05-13</time>
-</a>
+
+
+  <nav id="page-nav">
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/13/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/05/13/hello-world/" data-id="cka5eejfe0000yijdbqtw1ub2" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+  </nav>
 
 </section>
         
@@ -756,6 +753,10 @@ css的三大特性
       <ul>
         
           <li>
+            <a href="/2020/07/04/vue-cli/">vue-cli</a>
+          </li>
+        
+          <li>
             <a href="/2020/07/03/Vuejs/">Vuejs</a>
           </li>
         
@@ -769,10 +770,6 @@ css的三大特性
         
           <li>
             <a href="/2020/05/26/css/">css</a>
-          </li>
-        
-          <li>
-            <a href="/2020/05/26/es6-down/">es6-down</a>
           </li>
         
       </ul>
